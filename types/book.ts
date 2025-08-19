@@ -12,5 +12,7 @@ export interface Review {
     quotes?: string[],
     favCharacter?: string,
     startDate?: string,
-    endDate?: string
+    endDate?: string,
+    genre?: string,
+    recommend?: boolean
 }

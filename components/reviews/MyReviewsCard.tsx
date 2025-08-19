@@ -1,16 +1,17 @@
 import React from "react";
-import { Image, ImageSourcePropType, View } from "react-native";
+import { Image, ImageSourcePropType, Pressable, View } from "react-native";
 import { Rating } from "../rating/Rating";
 
 type Props = {
   title: string;
   image?: ImageSourcePropType;
   rating?: 0 | 1 | 2 | 3 | 4 | 5;
+  onPress?: () => void;
 };
 
-export const MyReviewsCard = ({ title, image, rating }: Props) => {
+export const MyReviewsCard = ({ title, image, rating, onPress }: Props) => {
   return (
-    <View className="w-full">
+    <Pressable onPress={onPress} className="w-full">
       <View>
         <Image source={image}  className="w-full h-[200px] rounded-xl"
         resizeMode="cover" />
@@ -19,6 +20,6 @@ export const MyReviewsCard = ({ title, image, rating }: Props) => {
         {/* <Text className="text-start">{title}</Text> */}
         <Rating rating={rating}/>
       </View>
-    </View>
+    </Pressable>
   );
 };
