@@ -7,7 +7,7 @@ export const data: Review[] = [
     author: "Harper Lee",
     pageCount: 320,
     rating: 5,
-    review: "Un clásico inolvidable sobre la justicia y la infancia.",
+    review: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.",
     quotes: [
       "La valentía es cuando sabes que estás derrotado antes de empezar... y aun así empiezas.",
       "La valentía es cuando sabes que estás derrotado antes de empezar... y aun así empiezas.",
@@ -17,7 +17,7 @@ export const data: Review[] = [
     startDate: "2025-08-19",
     endDate: "2025-08-19",
     genre: "Classic",
-    recommend: true
+    recommend:true
   },
   {
     id: "2",

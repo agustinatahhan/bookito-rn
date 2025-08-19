@@ -1,3 +1,7 @@
+import {
+  DescriptionComponent,
+  HeaderComponent,
+} from "@/components/detail/DetailComponent";
 import { Rating } from "@/components/rating/Rating";
 import { data } from "@/data/mockReviews";
 import { Ionicons } from "@expo/vector-icons";
@@ -10,58 +14,60 @@ const MyReviewDetail = () => {
   const startDate = review?.startDate?.split("-").reverse().join("/");
   const endDate = review?.endDate?.split("-").reverse().join("/");
   return (
-    <SafeAreaView className="flex-1 mx-5">
-      <ScrollView 
-      showsVerticalScrollIndicator={false}
-      >
+    <SafeAreaView className="flex-1 bg-background">
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <View className="mb-8 mt-10 mx-5">
+          <View className="flex items-center">
+            <Image
+              source={review?.image}
+              className="w-[200px] h-[300px] rounded-xl mb-3"
+            />
+            <Rating rating={review?.rating} />
+          </View>
+          <Text className="text-3xl font-title font-bold text-expresso text-center mt-5">
+            {review?.title}
+          </Text>
+          <View className="mt-5 flex-col gap-1 bg-highlight/60 py-3 px-3 rounded-xl">
+            <HeaderComponent title="Author:" description={review?.author} />
+            <HeaderComponent title="Genre:" description={review?.genre} />
+            <HeaderComponent title="Pages:" description={review?.pageCount} />
+            <HeaderComponent
+              title="Start Date:"
+              description={review?.startDate}
+            />
+            <HeaderComponent title="End Date:" description={review?.endDate} />
+          </View>
 
-      <View className="mb-8 mt-10">
-        <View className="flex items-center">
-          <Image
-            source={review?.image}
-            className="w-[200px] h-[300px] rounded-xl"
-          />
-          <Rating rating={review?.rating}/>
+          <View className="flex-col gap-1 ">
+            <DescriptionComponent
+              title="Review"
+              description={review?.review}
+              className="mt-5 bg-highlight/30 py-3 px-3 rounded-xl"
+            />
+            <DescriptionComponent
+              title="Quotes"
+              description={review?.quotes?.join("\n")}
+              className="mt-5 bg-highlight/50 py-3 px-3 rounded-xl"
+            />
+
+            <DescriptionComponent
+              title="Fav Character"
+              description={review?.favCharacter}
+              className="mt-5 bg-highlight/80 py-3 px-3 rounded-xl"
+            />
+            <DescriptionComponent
+              title="Would you recommend it?"
+              description={
+                review?.recommend ? (
+                  <Ionicons size={26} name="happy-outline" />
+                ) : (
+                  <Ionicons size={26} name="sad-outline" />
+                )
+              }
+              className="mt-5 bg-highlight/20 py-3 px-3 rounded-xl "
+            />
+          </View>
         </View>
-            <Text className="text-3xl font-title font-bold mt-4">{review?.title}</Text>
-        <View className="mt-5">
-          {/* <Text className="font-normal text-2xl  font-title">
-            Title: <Text className="font-semibold text-lg font-body">{review?.title}</Text>
-          </Text> */}
-          <Text className="font-normal text-2xl  font-title">
-            Author: <Text className="font-semibold text-lg font-body">{review?.author}</Text>
-          </Text>
-          <Text className="font-normal text-2xl  font-title">
-            Genre: <Text className="font-semibold text-lg font-body">{review?.genre}</Text>
-          </Text>
-          <Text className="font-normal text-2xl  font-title">
-            Pages: <Text className="font-semibold text-lg font-body">{review?.pageCount}</Text>
-          </Text>
-          <Text className="font-normal text-2xl  font-title">
-            Start Date: <Text className="font-semibold text-lg font-body">{startDate}</Text>
-          </Text>
-          <Text className="font-normal text-2xl  font-title">
-            End Date: <Text className="font-semibold text-lg font-body">{endDate}</Text>
-          </Text>
-        </View>
-    
-        <View className="mt-5">
-          <Text className="font-bold text-2xl  font-title">Review</Text>
-          <Text className="font-body text-lg">{review?.review}</Text>
-        </View>
-        <View className="mt-5">
-          <Text className="font-bold text-2xl font-title">Quotes</Text>
-          <Text className="font-body text-lg">{review?.quotes?.join("\n")}</Text>
-        </View>
-         <View className="mt-5">
-          <Text className="font-bold text-2xl  font-title">Fav Character</Text>
-          <Text className="font-body text-lg">{review?.favCharacter}</Text>
-        </View>
-        <View className="mt-5">
-          <Text className="font-bold text-2xl font-title">Would you recommend it?</Text>
-          {review?.recommend ? <Ionicons size={20} name="happy-outline"/> : <Ionicons size={20} name="sad-outline"/>}
-        </View>
-      </View>
       </ScrollView>
     </SafeAreaView>
   );

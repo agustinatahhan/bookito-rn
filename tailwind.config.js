@@ -9,6 +9,11 @@ module.exports = {
         title: "Gambarino",
         body: "Switzer",     
       },
+      colors: {
+        background: "#fdf7f5",
+        expresso: "#3e2723",
+        highlight: "#f4c9d6"
+      }
     },
   },
   plugins: [],

@@ -4,7 +4,7 @@ import React from "react";
 import { ActivityIndicator } from "react-native";
 import "../global.css";
 const RootLayout = () => {
-    const [loaded] = useFonts({
+  const [loaded] = useFonts({
     Gambarino: require("../assets/fonts/Gambarino-Regular.otf"),
     Switzer: require("../assets/fonts/Switzer-Light.otf"),
   });
@@ -12,7 +12,9 @@ const RootLayout = () => {
   if (!loaded) {
     return <ActivityIndicator size="large" />;
   }
-  return <Stack  screenOptions={{ headerShown: false }}></Stack>;
+  return <Stack screenOptions={{ headerShown: false }}></Stack>
+    
+  
 };
 
 export default RootLayout;
