@@ -4,7 +4,7 @@
     "slug": "bookitoApp",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/book.jpeg",
+    "icon": "./assets/images/logo-bookito.png",
     "scheme": "bookitoapp",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
@@ -13,7 +13,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/book.jpeg",
+        "foregroundImage": "./assets/images/logo-bookito.png",
         "backgroundColor": "#ffffff"
       },
       "edgeToEdgeEnabled": true
@@ -21,14 +21,14 @@
     "web": {
       "bundler": "metro",
       "output": "static",
-      "favicon": "./assets/images/book.jpeg"
+      "favicon": "./assets/images/logo-bookito.png"
     },
     "plugins": [
       "expo-router",
       [
         "expo-splash-screen",
         {
-          "image": "./assets/images/book.jpeg",
+          "image": "./assets/images/logo-bookito.png",
           "imageWidth": 200,
           "resizeMode": "contain",
           "backgroundColor": "#ffffff"
